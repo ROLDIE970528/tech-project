@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>軟體工程師 | 量化交易專家</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .animate-pulse-custom {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .dark .gradient-bg {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .dark .glass-effect {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .link-card {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dark .link-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .theme-toggle {
+            transition: transform 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            transform: rotate(180deg);
+        }
+        
+        .typing-animation {
+            border-right: 2px solid;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { border-color: transparent; }
+            51%, 100% { border-color: currentColor; }
+        }
+        
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+        .stagger-6 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body class="min-h-screen gradient-bg transition-all duration-500">
+    <!-- Theme Toggle -->
+    <div class="fixed top-6 right-6 z-50">
+        <button id="themeToggle" class="theme-toggle p-3 rounded-full glass-effect text-white hover:bg-white hover:bg-opacity-20 transition-all duration-300">
+            <i class="fas fa-moon text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container mx-auto px-6 py-12 max-w-4xl">
+        <!-- Profile Section -->
+        <div class="text-center mb-12">
+            <!-- Avatar -->
+            <div class="mb-8 animate-fadeInUp">
+                <div class="w-32 h-32 mx-auto rounded-full glass-effect flex items-center justify-center animate-float">
+                    <i class="fas fa-chart-line text-5xl text-white"></i>
+                </div>
+            </div>
+            
+            <!-- Name & Title -->
+            <div class="animate-fadeInUp stagger-1">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    <span id="typingName">軟體工程師</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white text-opacity-90 mb-6">
+                    量化交易 × 自動化專家
+                </p>
+            </div>
+            
+            <!-- Bio -->
+            <div class="animate-fadeInUp stagger-2">
+                <div class="glass-effect rounded-2xl p-6 md:p-8 mb-8 text-white">
+                    <p class="text-lg leading-relaxed mb-4">
+                        專注於金融科技與量化交易系統開發，擅長運用機器學習與大數據分析打造智能交易策略。
+                    </p>
+                    <p class="text-base text-white text-opacity-80">
+                        目前專注技術：Python、JavaScript、React、Node.js、機器學習、區塊鏈技術
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <!-- GitHub -->
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
+               class="link-card glass-effect rounded-2xl p-6 text-white hover:text-white transition-all duration-300 animate-fadeInUp stagger-3">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center">
+                        <i class="fab fa-github text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold">GitHub</h3>
+                        <p class="text-white text-opacity-70">查看我的開源專案</p>
+                    </div>
+                    <i class="fas fa-external-link-alt ml-auto text-white text-opacity-50"></i>
+                </div>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:your.email@example.com" 
+               class="link-card glass-effect rounded-2xl p-6 text-white hover:text-white transition-all duration-300 animate-fadeInUp stagger-4">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold">Email</h3>
+                        <p class="text-white text-opacity-70">商業合作聯繫</p>
+                    </div>
+                    <i class="fas fa-external-link-alt ml-auto text-white text-opacity-50"></i>
+                </div>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+               class="link-card glass-effect rounded-2xl p-6 text-white hover:text-white transition-all duration-300 animate-fadeInUp stagger-5">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold">LinkedIn</h3>
+                        <p class="text-white text-opacity-70">專業履歷與經歷</p>
+                    </div>
+                    <i class="fas fa-external-link-alt ml-auto text-white text-opacity-50"></i>
+                </div>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+               class="link-card glass-effect rounded-2xl p-6 text-white hover:text-white transition-all duration-300 animate-fadeInUp stagger-6">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold">Instagram</h3>
+                        <p class="text-white text-opacity-70">生活與技術分享</p>
+                    </div>
+                    <i class="fas fa-external-link-alt ml-auto text-white text-opacity-50"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div class="glass-effect rounded-xl p-4 text-center text-white animate-fadeInUp stagger-3">
+                <div class="text-2xl font-bold animate-pulse-custom">5+</div>
+                <div class="text-sm text-white text-opacity-70">年經驗</div>
+            </div>
+            <div class="glass-effect rounded-xl p-4 text-center text-white animate-fadeInUp stagger-4">
+                <div class="text-2xl font-bold animate-pulse-custom">50+</div>
+                <div class="text-sm text-white text-opacity-70">專案</div>
+            </div>
+            <div class="glass-effect rounded-xl p-4 text-center text-white animate-fadeInUp stagger-5">
+                <div class="text-2xl font-bold animate-pulse-custom">10+</div>
+                <div class="text-sm text-white text-opacity-70">技術棧</div>
+            </div>
+            <div class="glass-effect rounded-xl p-4 text-center text-white animate-fadeInUp stagger-6">
+                <div class="text-2xl font-bold animate-pulse-custom">24/7</div>
+                <div class="text-sm text-white text-opacity-70">自動化</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center text-white text-opacity-60 animate-fadeInUp stagger-6">
+            <p class="mb-2">© 2024 量化交易專家 - 讓數據驅動未來</p>
+            <div class="flex justify-center space-x-4">
+                <i class="fas fa-robot animate-pulse-custom"></i>
+                <i class="fas fa-chart-bar animate-pulse-custom"></i>
+                <i class="fas fa-code animate-pulse-custom"></i>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark');
+            icon.className = 'fas fa-sun text-xl';
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            
+            if (body.classList.contains('dark')) {
+                icon.className = 'fas fa-sun text-xl';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.className = 'fas fa-moon text-xl';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+        
+        // Typing Animation
+        const typingElement = document.getElementById('typingName');
+        const text = '軟體工程師';
+        let index = 0;
+        
+        function typeWriter() {
+            if (index < text.length) {
+                typingElement.textContent = text.slice(0, index + 1);
+                index++;
+                setTimeout(typeWriter, 150);
+            } else {
+                typingElement.classList.remove('typing-animation');
+            }
+        }
+        
+        // Start typing animation after page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                typingElement.textContent = '';
+                typingElement.classList.add('typing-animation');
+                typeWriter();
+            }, 500);
+        });
+        
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all animated elements
+        document.querySelectorAll('.animate-fadeInUp').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            observer.observe(el);
+        });
+        
+        // Add click ripple effect to cards
+        document.querySelectorAll('.link-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                const ripple = document.createElement('div');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    background: rgba(255, 255, 255, 0.3);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    animation: ripple 0.6s ease-out;
+                    pointer-events: none;
+                `;
+                
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+                
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+        
+        // Add ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(2);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'984f56bd20bd4a0d',t:'MTc1ODg1MzgyMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
